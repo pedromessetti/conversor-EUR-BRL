@@ -10,7 +10,7 @@ def moeda(preco=0, symb='R$'):
     return f'{symb} {preco:.2f}'.replace('.', ',')
 
 
-def leiaDin2(txt):
+def leiaDin(txt):
     while True:
         try:
             num = float(input(txt))
@@ -23,7 +23,7 @@ def leiaDin2(txt):
 
 c = CurrencyConverter()
 lin()
-print(f'{str(date.today()):^30}')
+print(f'{"CONVERSOR EUR-BRL":^30}\n{str(date.today()):^30}')
 lin()
-eur = leiaDin2('Euros = € ')
+eur = leiaDin('Euros = € ')
 print(f'{"Real ="} {moeda(preco=c.convert(eur, "EUR", "BRL"))}')
